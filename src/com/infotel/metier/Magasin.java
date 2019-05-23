@@ -1,12 +1,15 @@
 package com.infotel.metier;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -26,6 +29,16 @@ private	long idMagasin;
 private String nomMagasin;
 private int codeMagasin;
 private double prixDuLocal;
+
+@OneToMany (mappedBy = "magasin", cascade = CascadeType.REMOVE)
+List<Produit> produits = new ArrayList<Produit>();
+
+public List<Produit> getProduits() {
+	return produits;
+}
+public void setProduits(List<Produit> produits) {
+	this.produits = produits;
+}
 public long getIdMagasin() {
 	return idMagasin;
 }

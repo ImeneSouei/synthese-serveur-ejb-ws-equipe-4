@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -32,6 +33,17 @@ public abstract class Produit implements Serializable{
 	private String nomProduit;
 	private int stock;
 	private double prix;
+	
+	@ManyToOne
+	private Magasin magasin;
+	
+	
+	public Magasin getMagasin() {
+		return magasin;
+	}
+	public void setMagasin(Magasin magasin) {
+		this.magasin = magasin;
+	}
 	public long getIdProduit() {
 		return idProduit;
 	}
