@@ -27,7 +27,7 @@ public interface IdaoRemote {
 	
 	public void ajouterProduitPerissable(ProduitPerissable x);
 	public List<ProduitPerissable> findAllProduitPerissable();
-	public void modifierProduitPerissable(ProduitPerissable p);
+	public void modifierProduitPerissable(ProduitPerissable x);
 	public void supprimerProduitPerissable(long idProduit);
 	public ProduitNonPerissable getProduitPerissable(long idProduit);
 	public ProduitNonPerissable  affichageProduitPerissable(long idProduit);
