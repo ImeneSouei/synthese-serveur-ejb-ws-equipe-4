@@ -5,7 +5,9 @@ import java.util.List;
 import javax.ejb.Local;
 
 import com.infotel.metier.Magasin;
+import com.infotel.metier.Produit;
 import com.infotel.metier.ProduitNonPerissable;
+import com.infotel.metier.ProduitPerissable;
 @Local
 public interface IdaoLocal {
 	public void ajouterMagasin(Magasin m);
@@ -21,5 +23,20 @@ public interface IdaoLocal {
 	public void supprimerProduitNonPerissable(long idProduit);
 	public ProduitNonPerissable getProduitNonPerissable(Long idProduit);
 	public ProduitNonPerissable  affichageProduitNonPerissable(long idProduit);
+	
+	public void ajouterProduitPerissable(ProduitPerissable x);
+	public List<ProduitPerissable> findAllProduitPerissable();
+	public void modifierProduitPerissable(ProduitPerissable p);
+	public void supprimerProduitPerissable(long idProduit);
+	public ProduitNonPerissable getProduitPerissable(long idProduit);
+	public ProduitNonPerissable  affichageProduitPerissable(long idProduit);
+	
+	
+	public void ajouterProduit(Produit p, long idMagasin); 
+	public void supprimerMagasin (Magasin m);
+	public double calculPrixMagasin(Magasin m);
+	
+	
+	
 
 }
